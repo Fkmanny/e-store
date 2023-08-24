@@ -65,15 +65,17 @@ const Login = () => {
               <input value={email} onChange={(e) => setEmail(e.target.value)} className=' bg-gray-100 rounded-md p-3 mb-2 ' placeholder='Email' type='email' required />
               <input value={password} onChange={(e) => setPassword(e.target.value)} className=' bg-gray-100 rounded-md p-3 ' placeholder='Password' type='password' required />
               <button type='submit' className=' bg-blue-900 rounded-md p-3 my-3 font-bold text-white hover:duration-300 hover:bg-blue-800'>Login</button>
-              <Link className='' href='/Reset'><h3 className='pl-1 text-left cursor-pointer hover:underline'>Forgot Password?</h3></Link>
+              <Link href='/Reset'><h3 className='pl-1 text-left cursor-pointer hover:underline'>Forgot Password?</h3></Link>
               <p className='font-semibold text-lg my-1.5 text-center'>-- or --</p>
             </form>
 
             {/* <button className='flex w-full justify-center text-gray-500 border-2 border-gray-200 rounded-md p-3 my-3 font-semibold hover:duration-300 hover:bg-gray-200'><FcGoogle size={25}/><span className='ml-2'>Sign in with Google</span></button> */}
-            <button onClick={signInGoogle} className='flex w-full justify-center text-gray-700 border-2 border-gray-300 rounded-md p-3 my-3 font-bold hover:duration-300 hover:bg-gray-200'><FcGoogle size={25}/><span className='ml-2'>Sign in with Google</span></button>
-            <span className='flex justify-center'>
-              <p className='pr-2'>Don't have an account?</p>
-              <Link href='/Register'><h3 className='underline cursor-pointer'>Register</h3></Link>
+            <button onClick={signInGoogle} className="flex w-full justify-center text-gray-700 border-2 border-gray-300 rounded-md p-3 my-3 font-bold hover:duration-300 hover:bg-gray-200"><FcGoogle size={25} />
+            <span className="ml-2">Sign in with Google</span>
+            </button>
+            <span className="flex justify-center">
+              <p className="pr-2">Do not have an account?</p>
+              <Link href="/Register"><h3 className="underline cursor-pointer">Register</h3></Link>
             </span>
           </section>
         </div>
