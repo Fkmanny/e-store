@@ -1,16 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
-
+import useAuthStore from '../authStore';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
+import  Loadee  from '../components/Loadee';
+
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+  const { isLoggedIn  } = useAuthStore();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  
 
   // const handleCheckout = async () => {
   //   const stripe = await getStripe();
@@ -32,7 +40,13 @@ const Cart = () => {
   //   stripe.redirectToCheckout({ sessionId: data.id });
   // }
 
+  const signIn = () => {
+    setShowCart(false);
+    router.push('/Login');
+  }
+
   const handleCheckout = async () => {
+    setIsLoading(true);
     const stripe = await getStripe();
   
     try {
@@ -49,7 +63,7 @@ const Cart = () => {
       }
   
       const data = await response.json();
-  
+      setIsLoading(false);
       toast.loading('Redirecting...');
   
       stripe.redirectToCheckout({ sessionId: data.id });
@@ -60,6 +74,9 @@ const Cart = () => {
   };
 
   return (
+    <>
+    {isLoading && <Loadee/>}
+
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
         <button
@@ -124,15 +141,25 @@ const Cart = () => {
               <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
             </div>
+
+            {isLoggedIn ? 
             <div className="btn-container">
                   <button type="button" className="btn" onClick={handleCheckout}>
                     Pay with Stripe
                   </button>
             </div>
+            : 
+            <div className="btn-container">
+            <button type="button" className="btn" onClick={signIn}>Login to pay</button>
+            </div>
+            }
+
           </div>
         )}
       </div>
     </div>
+    </>
+    
   )
 }
 

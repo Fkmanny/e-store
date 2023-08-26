@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import  Loadee  from '../components/Loadee';
 
 import { urlFor } from '../lib/client';
 
 const Product = ({ product: { image, name, slug, price } }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const load = () => {
+    setIsLoading(true);
+  }
   return (
-    <div>
-      <Link href={`/product/${slug.current}`}>
+    <>
+    {isLoading && <Loadee/>}
+    <div onClick={load}>
+      <Link href={`/${slug.current}`}>
         <div className="product-card">
           <img 
             src={urlFor(image && image[0])}
@@ -19,6 +26,8 @@ const Product = ({ product: { image, name, slug, price } }) => {
         </div>
       </Link>
     </div>
+    </>
+
   )
 }
 

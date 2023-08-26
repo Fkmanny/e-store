@@ -114,10 +114,10 @@ const Header = () => {
             <Link href="/"><span className="AoenikRegular" >Home</span></Link>
           </li>
           <li className='h3 cursor-pointer hover:text-red-600 hover:duration-500'>
-            <Link href="/Contact"><span className="AoenikRegular" >Contact Us</span></Link>
+            <Link href="/"><span className="AoenikRegular" >Contact Us</span></Link>
           </li>
           <li className='h3 cursor-pointer hover:text-red-600 hover:duration-500'>
-            <Link href="/About"><span className="AoenikRegular" >About</span></Link>
+            <Link href="/"><span className="AoenikRegular" >About</span></Link>
           </li>
           {/* {isLoggedIn && 
           <li className='h3 cursor-pointer hover:text-red-600 hover:duration-500'>

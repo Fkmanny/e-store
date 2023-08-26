@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
-import { client, urlFor } from '../../lib/client';
-import { Product } from '../../components';
-import { useStateContext } from '../../context/StateContext';
-import  Loadee  from '../../components/Loadee';
+import { client, urlFor } from '../lib/client';
+import { Product } from '../components';
+import { useStateContext } from '../context/StateContext';
+import  Loadee  from '../components/Loadee';
 
 
 const ProductDetails = ({ product, products }) => {

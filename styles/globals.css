@@ -861,9 +861,13 @@ body{
 }
 
 .mContainer{
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  z-index: 1000;
+    top: 60%;
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
 
 }
 .loader {
@@ -873,7 +877,6 @@ body{
   height: 100vh;
   z-index: 200;
   top: 200px;
-  backdrop-filter: blur(7px);
 }
 .loader span {
   display: inline-block;
