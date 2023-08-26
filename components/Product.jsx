@@ -14,7 +14,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
     {isLoading && <Loadee/>}
     <div onClick={load}>
       <Link href={`/${slug.current}`}>
-        <div className="product-card">
+        <div className=" scale-105 sm:m sm:scale-100 mb-10 product-card">
           <img 
             src={urlFor(image && image[0])}
             width={250}
