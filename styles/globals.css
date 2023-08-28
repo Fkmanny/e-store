@@ -710,13 +710,12 @@ margin-top: 160px;
     height: 350px;
   }
   .cart-container{
-    width: 97%;
-    margin-left: 3%;
+    width: 100%;
   padding: 4px;
   }
   .cart-heading{
     margin-top: 35px;
-    margin-left: 35px;
+    margin-left: 15px;
   }
   .product-container{
     margin-top: 10px;
@@ -724,7 +723,7 @@ margin-top: 160px;
   .product{
     padding: 20px 5px;
     /* gap: 30px; */
-    margin-left: 20px;
+    margin-left: 0px;
 
   }
   .product .cart-product-image{
@@ -763,6 +762,7 @@ margin-top: 160px;
 }
 .cart-bottom{
   padding: 30px;
+  bottom: 40px;
 }
 
 .total h3{
