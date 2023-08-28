@@ -182,10 +182,17 @@ const Header = () => {
 
        <div onClick={onOutsideClick} className={`${showMenu ? 'absolute' : 'hidden'}  right-0 top-0 w-screen h-screen backdrop-blur-sm`}>
           <div onClick={(e) => e.stopPropagation()} className='absolute smalls z-500 right-2 top-4 rounded-lg bg-white shadow-[0_10px_20px_rgba(0,0,0,0.2)] w-64 py-4 pb-7 px-1'>
-            <span className='flex justify-between px-2.5 mb-12'>
+            <span className='flex justify-between px-2.5 mb-7'>
               {logo}
               <CgClose onClick={hideMenu} size={30} className='pt-1.5 text-[#11453b] hover:cursor-pointer hover:text-red-600 hover:drop-shadow-[0_2px_1px_rgba(0,0,0,0.1)]' />
             </span>
+            {displayName && 
+
+            <span className={`pl-3 mb-5 cursor-pointer font-semibold flex items-center`}>
+                <FaUserCircle size={20} className='mr-2 text-gray-500' />
+                Hi, {displayName}
+              </span>
+            }
             <ul className='text-start pl-4'>
               <li>
                 <Link href="/" >
