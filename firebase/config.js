@@ -6,13 +6,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyA44r-v6mRr8bTJxRIugQQup012uyRCj-I",
-  authDomain: "e-store-7af1e.firebaseapp.com",
-  projectId: "e-store-7af1e",
-  storageBucket: "e-store-7af1e.appspot.com",
-  messagingSenderId: "541932872957",
-  appId: "1:541932872957:web:d96b1184f8c3896e480a94",
-  measurementId: "G-9T77017X5C"
+  apiKey: "AIzaSyCEtzeA4cvhhIpN1YfAyJ_eToGy312qfV8",
+  authDomain: "carnik-873cd.firebaseapp.com",
+  projectId: "carnik-873cd",
+  storageBucket: "carnik-873cd.appspot.com",
+  messagingSenderId: "857222224278",
+  appId: "1:857222224278:web:097b2faeb4d8bca3bde5b7",
+  measurementId: "G-WEVDL50MXS"
 };
 
 // Initialize Firebase
